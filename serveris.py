@@ -20,6 +20,10 @@ def publiski():
 def pieslegties():
     return render_template("login.html")
 
+@app.route('/lietotajs')
+def lietotajs():
+    return render_template("user_menu.html")
+
 @app.route('/api/v1/vielas')
 def vielas():
     # pārveidojam par json pirms atgriežam
