@@ -10,7 +10,7 @@ async function raditNoliktavasDatus(tipsAtlase)
     jsonVielas = await vielasNoServera.json();
     jsonVielas = pievienotIerakstuParKategoriju(jsonVielas, 'viela');
     //
-    let inventarsNoServera = await fetch('https://pytonc.eu.pythonanywhere.com/api/v1/inventars');
+    let inventarsNoServera = await fetch('/api/v1/inventars');
     jsonInventars = await inventarsNoServera.json();
     jsonInventars = pievienotIerakstuParKategoriju(jsonInventars, 'inventars');
   }
@@ -24,7 +24,7 @@ async function raditNoliktavasDatus(tipsAtlase)
   else if(tipsAtlase=='aprikojums')
   {
     //jsonInventars = await iegutDatusNoApi('https://pytonc.eu.pythonanywhere.com/api/v1/inventars');
-    let inventarsNoServera = await fetch('https://pytonc.eu.pythonanywhere.com/api/v1/inventars');
+    let inventarsNoServera = await fetch('/api/v1/inventars');
     jsonInventars = await inventarsNoServera.json();
     jsonInventars = pievienotIerakstuParKategoriju(jsonInventars, 'inventars');
   }
@@ -135,7 +135,7 @@ async function dzestVieluAprikojumu(id,kategorija)
   
   if (confirm('Dzēst?')) 
   {
-    let request = await fetch('https://pytonc.eu.pythonanywhere.com/api/v1/'+kategorija+'/'+id+'/dzest',
+    let request = await fetch('/api/v1/'+kategorija+'/'+id+'/dzest',
                 {
                 method:"POST",
                 headers: {
