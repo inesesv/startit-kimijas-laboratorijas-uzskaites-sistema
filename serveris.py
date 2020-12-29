@@ -18,7 +18,7 @@ def vielas():
 def viela1(vielasID):
   viela=f"Vielas ar doto id: {vielasID} nav atrasta" 
   for v in dati.vielas:
-   if str(v['id'])==vielasID:# var būt arī  if v['id']==int(vielasID):
+   if if v['id']==int(vielasID): #str(v['id'])==vielasID:# var būt arī  if v['id']==int(vielasID):
      viela=v
    return jsonify(viela)
 
